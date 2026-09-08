@@ -1,0 +1,37 @@
+/* ============================================
+   TANDOORI CHICKEN POINT — DESIGN TOKENS
+   Palette drawn from the brand logo: charcoal-black
+   rooster silhouette, flame-red comb & wattle,
+   ember-orange flame, golden beak highlight.
+   ============================================ */
+
+:root {
+  --ink: #1C1210;
+  --charcoal: #2B1B17;
+  --charcoal-soft: #3A2621;
+  --flame: #C41E24;
+  --flame-dark: #8E1319;
+  --ember: #E8720C;
+  --ember-light: #F79B3D;
+  --gold: #F2A93B;
+  --paper: #FCEFE0;
+  --paper-soft: #FFF8EE;
+  --card: #FFFFFF;
+  --text-body: #362420;
+  --text-muted: #6E5850;
+  --text-on-dark: #F5EBDD;
+  --text-on-dark-muted: #CBB6A9;
+  --line: rgba(28, 18, 16, 0.12);
+  --line-on-dark: rgba(245, 235, 221, 0.16);
+
+  --font-display: "Anton", "Arial Narrow", sans-serif;
+  --font-body: "Work Sans", "Segoe UI", sans-serif;
+
+  --page-max: 1180px;
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 28px;
+  --gap-section: clamp(64px, 9vw, 112px);
+
+  --shadow-card: 0 18px 40px -22px rgba(28, 18, 16, 0.45);
+}

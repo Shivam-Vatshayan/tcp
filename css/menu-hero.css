@@ -1,0 +1,26 @@
+/* ============================================
+   MENU PAGE — HERO BANNER
+   ============================================ */
+
+.page-hero {
+  background: var(--ink);
+  color: var(--text-on-dark);
+  padding: 56px 0 60px;
+  text-align: center;
+  position: relative;
+}
+
+.page-hero .eyebrow-tag { justify-content: center; color: var(--ember-light); }
+.page-hero .eyebrow-tag::before { background: var(--flame); }
+.page-hero h1 { color: var(--text-on-dark); margin-top: 14px; }
+.page-hero p { max-width: 56ch; margin: 16px auto 0; color: var(--text-on-dark-muted); }
+
+.page-hero-crumb {
+  display: inline-flex;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-on-dark-muted);
+  margin-top: 18px;
+}
+
+.page-hero-crumb a:hover { color: var(--ember-light); }

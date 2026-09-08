@@ -1,0 +1,57 @@
+/* ============================================
+   MENU PAGE — CHEF'S SPECIAL
+   ============================================ */
+
+.chef-special-section { background: var(--charcoal); }
+
+.chef-special-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+.chef-special-media {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.chef-special-media img { width: 100%; aspect-ratio: 5/4; object-fit: cover; }
+
+.chef-special-media .ribbon {
+  position: absolute;
+  top: 18px; left: 18px;
+  background: var(--gold);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding: 7px 16px;
+  border-radius: 999px;
+}
+
+.chef-special-copy .eyebrow-tag { color: var(--ember-light); }
+.chef-special-copy .eyebrow-tag::before { background: var(--flame); }
+.chef-special-copy h2 { margin-top: 12px; }
+.chef-special-copy p { margin-top: 14px; max-width: 50ch; }
+
+.chef-special-price {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.chef-special-price strong {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--gold);
+}
+
+.chef-special-price del { color: var(--text-on-dark-muted); }
+
+.chef-special-copy .btn { margin-top: 26px; }
+
+@media (min-width: 900px) {
+  .chef-special-grid { grid-template-columns: 1fr 1fr; gap: 56px; }
+}

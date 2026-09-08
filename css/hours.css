@@ -1,0 +1,54 @@
+/* ============================================
+   CONTACT PAGE — OPENING HOURS
+   ============================================ */
+
+.hours-section { background: var(--charcoal); }
+
+.hours-wrap {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+.hours-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.hours-table tr {
+  border-bottom: 1px solid var(--line-on-dark);
+}
+
+.hours-table tr:last-child { border-bottom: none; }
+
+.hours-table td {
+  padding: 16px 4px;
+  color: var(--text-on-dark);
+  font-weight: 600;
+}
+
+.hours-table td:last-child {
+  text-align: right;
+  color: var(--ember-light);
+  font-family: var(--font-display);
+  letter-spacing: 0.4px;
+}
+
+.hours-table tr.today td { color: var(--gold); }
+
+.hours-callout {
+  background: var(--charcoal-soft);
+  border: 1px solid var(--line-on-dark);
+  border-radius: var(--radius-md);
+  padding: 30px;
+}
+
+.hours-callout .eyebrow-tag { color: var(--ember-light); }
+.hours-callout .eyebrow-tag::before { background: var(--flame); }
+.hours-callout h3 { margin: 12px 0 10px; }
+.hours-callout .btn { margin-top: 22px; }
+
+@media (min-width: 900px) {
+  .hours-wrap { grid-template-columns: 1fr 0.85fr; }
+}

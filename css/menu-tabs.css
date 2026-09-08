@@ -1,0 +1,42 @@
+/* ============================================
+   MENU PAGE — CATEGORY TABS
+   ============================================ */
+
+.menu-tabs-section {
+  position: sticky;
+  top: 79px;
+  z-index: 50;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  padding: 18px 0;
+}
+
+.menu-tabs {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 2px;
+}
+
+.menu-tabs::-webkit-scrollbar { display: none; }
+
+.menu-tab {
+  flex-shrink: 0;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 2px solid var(--line);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-body);
+  background: var(--card);
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.menu-tab:hover { border-color: var(--ember); }
+
+.menu-tab.active {
+  background: var(--flame);
+  border-color: var(--flame);
+  color: #fff;
+}

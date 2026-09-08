@@ -1,0 +1,59 @@
+/* ============================================
+   HOME — ABOUT / STORY
+   ============================================ */
+
+.about-section .container {
+  display: grid;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-media {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 16px;
+}
+
+.about-media img {
+  border-radius: var(--radius-md);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-media .tall { grid-row: span 2; aspect-ratio: 3/4; }
+.about-media .wide { aspect-ratio: 4/3; }
+
+.about-copy p { margin-top: 16px; max-width: 54ch; }
+
+.about-highlights {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.about-highlight {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.about-highlight svg {
+  flex-shrink: 0;
+  color: var(--flame);
+  margin-top: 2px;
+}
+
+.about-highlight strong { display: block; font-size: 0.98rem; color: var(--ink); }
+.about-highlight span { font-size: 0.87rem; color: var(--text-muted); }
+
+.about-copy .btn { margin-top: 32px; }
+
+@media (min-width: 900px) {
+  .about-section .container {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 60px;
+  }
+}

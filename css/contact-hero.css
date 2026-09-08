@@ -1,0 +1,25 @@
+/* ============================================
+   CONTACT PAGE — HERO BANNER
+   ============================================ */
+
+.contact-hero {
+  background: var(--ink);
+  color: var(--text-on-dark);
+  padding: 56px 0 60px;
+  text-align: center;
+}
+
+.contact-hero .eyebrow-tag { justify-content: center; color: var(--ember-light); }
+.contact-hero .eyebrow-tag::before { background: var(--flame); }
+.contact-hero h1 { color: var(--text-on-dark); margin-top: 14px; }
+.contact-hero p { max-width: 56ch; margin: 16px auto 0; color: var(--text-on-dark-muted); }
+
+.contact-hero-crumb {
+  display: inline-flex;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-on-dark-muted);
+  margin-top: 18px;
+}
+
+.contact-hero-crumb a:hover { color: var(--ember-light); }

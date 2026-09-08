@@ -1,0 +1,51 @@
+/* ============================================
+   HOME — TESTIMONIALS
+   ============================================ */
+
+.testimonial-grid {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: 1fr;
+}
+
+.testimonial-card {
+  background: var(--card);
+  border-radius: var(--radius-md);
+  padding: 30px 26px;
+  box-shadow: var(--shadow-card);
+}
+
+.testimonial-stars {
+  display: flex;
+  gap: 3px;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.testimonial-card p {
+  font-size: 1rem;
+  color: var(--text-body);
+}
+
+.testimonial-person {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.testimonial-person img {
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-person strong { display: block; font-size: 0.95rem; color: var(--ink); }
+.testimonial-person span { font-size: 0.8rem; color: var(--text-muted); }
+
+@media (min-width: 700px) {
+  .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1000px) {
+  .testimonial-grid { grid-template-columns: repeat(3, 1fr); }
+}

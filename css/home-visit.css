@@ -1,0 +1,59 @@
+/* ============================================
+   HOME — VISIT US / LOCATION TEASER
+   ============================================ */
+
+.visit-section .container {
+  display: grid;
+  gap: 34px;
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  box-shadow: var(--shadow-card);
+}
+
+.visit-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.visit-info-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.visit-info-item .icon-circle {
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--flame);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.visit-info-item strong { display: block; color: var(--ink); margin-bottom: 3px; }
+.visit-info-item span, .visit-info-item a { font-size: 0.93rem; color: var(--text-muted); }
+.visit-info-item a:hover { color: var(--flame); }
+
+.visit-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.visit-map {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  min-height: 260px;
+  border: 1px solid var(--line);
+}
+
+.visit-map iframe { width: 100%; height: 100%; min-height: 260px; border: 0; }
+
+@media (min-width: 900px) {
+  .visit-section .container { grid-template-columns: 0.9fr 1.1fr; align-items: center; padding: 56px; }
+}
