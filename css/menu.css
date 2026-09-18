@@ -117,7 +117,7 @@ input {
 
 
 /* =========================================================
-   HERO
+   HERO — UPDATED
 ========================================================= */
 
 .menu-hero {
@@ -133,27 +133,7 @@ input {
     overflow: hidden;
 
     background:
-        url("images/hero-tandoori-chicken.webp")
-        center center /
-        cover
-        no-repeat;
-
-}
-
-
-.menu-hero-overlay {
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(25, 12, 7, .94) 0%,
-            rgba(25, 12, 7, .78) 45%,
-            rgba(25, 12, 7, .22) 100%
-        );
+        var(--tcp-brown);
 
 }
 
@@ -164,20 +144,48 @@ input {
 
     position: absolute;
 
-    width: 350px;
-    height: 350px;
+    width: 500px;
+    height: 500px;
 
-    right: -100px;
-    bottom: -130px;
+    right: -180px;
+    top: -170px;
 
     border-radius: 50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(242,140,24,.40),
+            rgba(242,140,24,.18),
             transparent 70%
         );
+
+    pointer-events: none;
+
+}
+
+
+.menu-hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    left: -150px;
+    bottom: -180px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(215,25,32,.16),
+            transparent 70%
+        );
+
+    pointer-events: none;
 
 }
 
@@ -194,9 +202,30 @@ input {
             calc(100% - 40px)
         );
 
+    min-height: 540px;
+
     margin: auto;
 
-    padding: 90px 0;
+    padding: 55px 0;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(420px, 0.85fr);
+
+    align-items: center;
+
+    gap: 50px;
+
+}
+
+
+.menu-hero-text {
+
+    position: relative;
+
+    z-index: 3;
 
 }
 
@@ -244,8 +273,8 @@ input {
     font-size:
         clamp(
             70px,
-            11vw,
-            125px
+            8vw,
+            115px
         );
 
     font-weight: 700;
@@ -314,6 +343,124 @@ input {
     font-size: 13px;
 
     letter-spacing: 1px;
+
+}
+
+
+/* =========================================================
+   HERO IMAGE — NEW
+========================================================= */
+
+.menu-hero-image {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 0;
+
+}
+
+
+.menu-hero-image::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 85%;
+
+    height: 85%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(242,140,24,.28),
+            transparent 68%
+        );
+
+    filter: blur(12px);
+
+    z-index: 0;
+
+}
+
+
+.menu-hero-image-frame {
+
+    position: relative;
+
+    z-index: 1;
+
+    width: 100%;
+
+    max-width: 540px;
+
+    aspect-ratio: 1 / .82;
+
+    overflow: hidden;
+
+    border-radius:
+        32px;
+
+    border:
+        1px solid rgba(255,255,255,.13);
+
+    box-shadow:
+        0 28px 70px rgba(0,0,0,.38);
+
+    transform:
+        rotate(1deg);
+
+}
+
+
+.menu-hero-image-frame::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(215,25,32,.08),
+            transparent 45%,
+            rgba(0,0,0,.25)
+        );
+
+    pointer-events: none;
+
+}
+
+
+.menu-hero-image-frame img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform .6s ease;
+
+}
+
+
+.menu-hero:hover
+.menu-hero-image-frame img {
+
+    transform:
+        scale(1.035);
 
 }
 
@@ -2104,6 +2251,99 @@ input {
 @media (max-width: 950px) {
 
 
+    /* HERO */
+
+    .menu-hero-content {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 35px;
+
+        padding:
+            60px 0;
+
+    }
+
+
+    .menu-hero {
+
+        min-height:
+            auto;
+
+    }
+
+
+    .menu-hero-text {
+
+        text-align:
+            center;
+
+    }
+
+
+    .hero-label {
+
+        margin-bottom:
+            18px;
+
+    }
+
+
+    .menu-hero h1 {
+
+        margin-left:
+            auto;
+
+        margin-right:
+            auto;
+
+    }
+
+
+    .menu-hero p {
+
+        font-size:
+            21px;
+
+    }
+
+
+    .hero-line {
+
+        margin-left:
+            auto;
+
+        margin-right:
+            auto;
+
+    }
+
+
+    .menu-hero-image {
+
+        width:
+            min(
+                100%,
+                620px
+            );
+
+        margin:
+            0 auto;
+
+    }
+
+
+    .menu-hero-image-frame {
+
+        max-width:
+            620px;
+
+    }
+
+
+    /* EXISTING TABLET */
+
     .featured-food-card {
 
         grid-template-columns:
@@ -2196,18 +2436,26 @@ input {
     }
 
 
-    .menu-hero {
+    /* HERO */
+
+    .menu-hero-content {
 
         min-height:
-            500px;
+            auto;
+
+        padding:
+            55px 0 45px;
+
+        gap:
+            30px;
 
     }
 
 
-    .menu-hero-content {
+    .menu-hero-text {
 
-        padding:
-            75px 0;
+        text-align:
+            center;
 
     }
 
@@ -2241,6 +2489,33 @@ input {
 
     }
 
+
+    .menu-hero-image {
+
+        width:
+            100%;
+
+    }
+
+
+    .menu-hero-image-frame {
+
+        max-width:
+            none;
+
+        aspect-ratio:
+            1 / .78;
+
+        border-radius:
+            24px;
+
+        transform:
+            none;
+
+    }
+
+
+    /* INTRO */
 
     .menu-intro {
 
@@ -2654,7 +2929,6 @@ input {
 
     }
 
-
 }
 
 
@@ -2669,6 +2943,22 @@ input {
 
         font-size:
             57px;
+
+    }
+
+
+    .menu-hero-content {
+
+        gap:
+            25px;
+
+    }
+
+
+    .menu-hero-image-frame {
+
+        border-radius:
+            20px;
 
     }
 

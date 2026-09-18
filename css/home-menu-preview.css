@@ -1,77 +1,646 @@
-/* ============================================
-   HOME — SIGNATURE DISHES PREVIEW
-   ============================================ */
+/* =========================================================
+   HOME — SIGNATURE MENU PREVIEW
+========================================================= */
+
+.signature-menu-preview {
+  position: relative;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
 
 .dish-preview-grid {
+
   display: grid;
-  gap: 24px;
+
   grid-template-columns: 1fr;
+
+  gap: 24px;
+
 }
+
+
+/* =========================================================
+   DISH CARD
+========================================================= */
 
 .dish-card {
-  background: var(--card);
-  border-radius: var(--radius-md);
+
+  position: relative;
+
   overflow: hidden;
+
+  background: var(--card);
+
+  border:
+
+    1px solid
+
+    rgba(215, 25, 32, 0.08);
+
+  border-radius: var(--radius-md);
+
   box-shadow: var(--shadow-card);
-  transition: transform 0.25s ease;
+
+  transition:
+
+    transform 0.3s ease,
+
+    box-shadow 0.3s ease,
+
+    border-color 0.3s ease;
+
 }
 
-.dish-card:hover { transform: translateY(-6px); }
+
+.dish-card:hover {
+
+  transform:
+
+    translateY(-7px);
+
+  border-color:
+
+    rgba(215, 25, 32, 0.20);
+
+  box-shadow:
+
+    0 18px 45px
+
+    rgba(55, 25, 8, 0.13);
+
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
 
 .dish-card figure {
+
   position: relative;
-  aspect-ratio: 4/3;
+
+  aspect-ratio: 4 / 3;
+
   overflow: hidden;
+
+  background:
+
+    #24170f;
+
 }
+
 
 .dish-card img {
-  width: 100%; height: 100%;
+
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
   object-fit: cover;
-  transition: transform 0.4s ease;
+
+  transition:
+
+    transform 0.55s ease;
+
 }
 
-.dish-card:hover img { transform: scale(1.06); }
+
+.dish-card:hover img {
+
+  transform:
+
+    scale(1.07);
+
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.dish-card figure::after {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+
+    linear-gradient(
+
+      180deg,
+
+      rgba(20, 8, 3, 0.03) 35%,
+
+      rgba(20, 8, 3, 0.30) 100%
+
+    );
+
+}
+
+
+/* =========================================================
+   TAG
+========================================================= */
 
 .dish-tag {
+
   position: absolute;
-  top: 14px; left: 14px;
-  background: var(--flame);
+
+  z-index: 3;
+
+  top: 14px;
+
+  left: 14px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  min-height: 29px;
+
+  padding:
+
+    5px 12px;
+
   color: #fff;
-  font-size: 0.72rem;
-  font-weight: 700;
-  padding: 5px 12px;
-  border-radius: 999px;
+
+  background:
+
+    var(--flame);
+
+  border-radius:
+
+    999px;
+
+  font-size:
+
+    0.70rem;
+
+  font-weight:
+
+    800;
+
+  letter-spacing:
+
+    0.3px;
+
+  line-height:
+
+    1;
+
+  box-shadow:
+
+    0 7px 18px
+
+    rgba(0, 0, 0, 0.16);
+
 }
 
-.dish-info { padding: 20px 22px 24px; }
+
+/* =========================================================
+   TAG VARIATIONS
+========================================================= */
+
+.dish-tag-orange {
+
+  background:
+
+    var(--tcp-orange, #f28c18);
+
+}
+
+
+.dish-tag-yellow {
+
+  color:
+
+    #24170f;
+
+  background:
+
+    var(--tcp-yellow, #ffc928);
+
+}
+
+
+.dish-tag-red {
+
+  background:
+
+    var(--tcp-red, #d71920);
+
+}
+
+
+/* =========================================================
+   DISH INFORMATION
+========================================================= */
+
+.dish-info {
+
+  padding:
+
+    21px 21px 23px;
+
+}
+
+
+/* =========================================================
+   TITLE + PRICE
+========================================================= */
 
 .dish-info-top {
+
   display: flex;
+
+  align-items: flex-start;
+
   justify-content: space-between;
-  align-items: baseline;
-  gap: 10px;
+
+  gap: 14px;
+
 }
 
-.dish-info-top h3 { font-size: 1.15rem; }
+
+.dish-info-top h3 {
+
+  margin: 0;
+
+  color:
+
+    var(--tcp-brown, #24170f);
+
+  font-family:
+
+    var(--font-display, "Oswald", sans-serif);
+
+  font-size:
+
+    1.18rem;
+
+  font-weight:
+
+    700;
+
+  line-height:
+
+    1.05;
+
+  text-transform:
+
+    uppercase;
+
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
 
 .dish-price {
-  font-family: var(--font-display);
-  color: var(--flame);
-  font-size: 1.1rem;
-  white-space: nowrap;
+
+  flex-shrink: 0;
+
+  color:
+
+    var(--flame, #d71920);
+
+  font-family:
+
+    var(--font-display, "Oswald", sans-serif);
+
+  font-size:
+
+    1.15rem;
+
+  font-weight:
+
+    700;
+
+  line-height:
+
+    1;
+
+  white-space:
+
+    nowrap;
+
 }
 
-.dish-info p { margin-top: 8px; font-size: 0.9rem; }
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.dish-info p {
+
+  margin:
+
+    10px 0 0;
+
+  color:
+
+    var(--muted, #756960);
+
+  font-size:
+
+    0.86rem;
+
+  line-height:
+
+    1.65;
+
+}
+
+
+/* =========================================================
+   MENU BUTTON AREA
+========================================================= */
 
 .menu-preview-footer {
-  text-align: center;
-  margin-top: 44px;
+
+  display:
+
+    flex;
+
+  justify-content:
+
+    center;
+
+  margin-top:
+
+    44px;
+
 }
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.menu-preview-footer .btn {
+
+  min-width:
+
+    175px;
+
+  text-align:
+
+    center;
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
 
 @media (min-width: 640px) {
-  .dish-preview-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .dish-preview-grid {
+
+    grid-template-columns:
+
+      repeat(2, 1fr);
+
+    gap:
+
+      25px;
+
+  }
+
+
+  .dish-info {
+
+    padding:
+
+      22px 23px 25px;
+
+  }
+
 }
 
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
 @media (min-width: 1000px) {
-  .dish-preview-grid { grid-template-columns: repeat(4, 1fr); }
+
+  .dish-preview-grid {
+
+    grid-template-columns:
+
+      repeat(4, 1fr);
+
+    gap:
+
+      22px;
+
+  }
+
+
+  .dish-card figure {
+
+    aspect-ratio:
+
+      4 / 3;
+
+  }
+
+
+  .dish-info-top h3 {
+
+    font-size:
+
+      1.12rem;
+
+  }
+
+
+  .dish-price {
+
+    font-size:
+
+      1.08rem;
+
+  }
+
+
+  .dish-info p {
+
+    font-size:
+
+      0.83rem;
+
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 639px) {
+
+  .dish-preview-grid {
+
+    gap:
+
+      18px;
+
+  }
+
+
+  .dish-card figure {
+
+    aspect-ratio:
+
+      16 / 11;
+
+  }
+
+
+  .dish-info {
+
+    padding:
+
+      19px 18px 21px;
+
+  }
+
+
+  .dish-info-top {
+
+    gap:
+
+      10px;
+
+  }
+
+
+  .dish-info-top h3 {
+
+    font-size:
+
+      1.08rem;
+
+  }
+
+
+  .dish-price {
+
+    font-size:
+
+      1.05rem;
+
+  }
+
+
+  .dish-info p {
+
+    font-size:
+
+      0.82rem;
+
+  }
+
+
+  .dish-tag {
+
+    top:
+
+      12px;
+
+    left:
+
+      12px;
+
+    padding:
+
+      5px 10px;
+
+    font-size:
+
+      0.66rem;
+
+  }
+
+
+  .menu-preview-footer {
+
+    margin-top:
+
+      32px;
+
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+  .dish-info-top {
+
+    flex-direction:
+
+      column;
+
+    align-items:
+
+      flex-start;
+
+  }
+
+
+  .dish-price {
+
+    margin-top:
+
+      3px;
+
+  }
+
+
+  .dish-info p {
+
+    margin-top:
+
+      9px;
+
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .dish-card,
+  .dish-card img {
+
+    transition:
+
+      none;
+
+  }
+
 }
