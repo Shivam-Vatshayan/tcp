@@ -1,65 +1,281 @@
-/* ============================================
-   HOME — SPECIAL OFFERS
-   ============================================ */
+ 
+/* =========================================================
+   OFFERS SECTION
+========================================================= */
 
 .offers-section {
-  background: linear-gradient(135deg, var(--flame) 0%, var(--flame-dark) 100%);
-  color: #fff;
   position: relative;
-  overflow: hidden;
 }
 
-.offers-section .section-head p { color: rgba(255,255,255,0.85); }
-.offers-section .eyebrow-tag { color: var(--gold); }
-.offers-section .eyebrow-tag::before { background: #fff; }
-.offers-section h2 { color: #fff; }
+
+/* =========================================================
+   4 CARDS IN ONE ROW
+========================================================= */
 
 .offers-grid {
   display: grid;
-  gap: 20px;
-  grid-template-columns: 1fr;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 22px;
+
+  width: 100%;
 }
+
+
+/* =========================================================
+   OFFER CARD
+========================================================= */
 
 .offer-card {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.22);
-  border-radius: var(--radius-md);
-  padding: 28px;
-  backdrop-filter: blur(2px);
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.06);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
-.offer-card .offer-badge {
-  display: inline-block;
-  background: var(--gold);
-  color: var(--ink);
-  font-weight: 700;
-  font-size: 0.75rem;
-  padding: 5px 12px;
+.offer-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.offer-image {
+  position: relative;
+
+  width: 100%;
+  height: 230px;
+
+  overflow: hidden;
+
+  background: #f3f1ed;
+}
+
+.offer-image::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 45%,
+      rgba(0, 0, 0, 0.18) 100%
+    );
+
+  pointer-events: none;
+}
+
+.offer-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.55s ease;
+}
+
+.offer-card:hover .offer-image img {
+  transform: scale(1.07);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.offer-content {
+  padding: 23px 21px 25px;
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.offer-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  width: fit-content;
+
+  padding: 7px 11px;
+
+  margin-bottom: 13px;
+
+  background: #8e1319;
+
+  color: #fff8ee;
+
   border-radius: 999px;
-  margin-bottom: 16px;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  line-height: 1;
 }
 
-.offer-card h3 { color: #fff; margin-bottom: 8px; }
-.offer-card p { color: rgba(255,255,255,0.82); font-size: 0.93rem; }
 
-.offer-card .offer-price {
-  margin-top: 18px;
+/* =========================================================
+   TITLE
+========================================================= */
+
+.offer-card h3 {
+  margin: 0 0 10px;
+
+  color: #171717;
+
+  font-size: 22px;
+
+  font-weight: 800;
+
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.offer-card p {
+  margin: 0;
+
+  color: #686868;
+
+  font-size: 13.5px;
+
+  font-weight: 400;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.offer-price {
   display: flex;
-  align-items: baseline;
-  gap: 10px;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 19px;
 }
 
-.offer-card .offer-price strong {
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  color: var(--gold);
+.offer-price strong {
+  color: #8e1319;
+
+  font-size: 22px;
+
+  font-weight: 800;
+
+  line-height: 1;
 }
 
-.offer-card .offer-price del {
-  color: rgba(255,255,255,0.55);
-  font-size: 0.95rem;
+.offer-price del {
+  color: #999;
+
+  font-size: 13px;
+
+  font-weight: 600;
 }
 
-@media (min-width: 700px) {
-  .offers-grid { grid-template-columns: repeat(3, 1fr); }
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .offers-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
+  }
+
+  .offer-image {
+    height: 250px;
+  }
+
 }
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .offers-grid {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .offer-image {
+    height: 240px;
+  }
+
+  .offer-content {
+    padding: 22px 20px 24px;
+  }
+
+  .offer-card h3 {
+    font-size: 22px;
+  }
+
+  .offer-card p {
+    font-size: 14px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .offer-image {
+    height: 215px;
+  }
+
+  .offer-content {
+    padding: 20px 18px 22px;
+  }
+
+}
+
+ 
